@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+    <menu id="root-menu" label="MENU">
+        <item label="xterm" icon="/usr/share/pixmaps/xterm-color_48x48.xpm">
+            <action name="Execute">
+                <command>/usr/bin/xterm</command>
+            </action>
+        </item>
+        <item label="夸克网盘" icon="/config/.wine/drive_c/users/abc/AppData/Local/Programs/quark-cloud-drive/icon_win.png">
+            <action name="Execute">
+                <command>/usr/bin/wine start /unix /config/.wine/drive_c/users/abc/AppData/Local/Programs/quark-cloud-drive/QuarkCloudDrive.exe --disable-gpu --no-sandbox</command>
+            </action>
+        </item>
+    </menu>
+</openbox_menu>

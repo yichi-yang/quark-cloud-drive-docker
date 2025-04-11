@@ -60,6 +60,9 @@ send_enter $install_quark_window
 # Wait for installation to finish (and the main window to show up)
 find_window '分享链接' 600
 
+wine reg add "HKCU\Software\Wine\Explorer" /v Desktop /t REG_SZ /d Default
+wine reg add "HKCU\Software\Wine\Explorer\Desktops" /v Default /t REG_SZ /d 1920x1080
+
 sleep 10
 
 # End the session

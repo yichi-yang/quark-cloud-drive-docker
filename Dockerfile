@@ -20,6 +20,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY --chmod=0755 /root/scripts/install_quark.sh /scripts/install_quark.sh
 ARG QUARK_URL="https://pdds.quark.cn/download/stfile/xx6479879xy4xz8zx/QuarkCloudDrive_v3.19.0_release_(Build2135311-20250327222033).exe"
+
+# Set VIRTUAL_DESKTOP to, e.g., "1920x1080" to emulate a virtual desktop
+ARG VIRTUAL_DESKTOP=""
 ENV WINEDEBUG=fixme-all
 
 # Wine prefix needs to be owned by abc

@@ -39,8 +39,11 @@ chmod +x $winetricks_path
 
 # Install CJK fonts with Winetricks
 $winetricks_path cjkfonts
-# Create a virtual desktop
-$winetricks_path vd=1920x1080
+
+if [[ -n "$VIRTUAL_DESKTOP" ]]; then
+    # Create a virtual desktop
+    $winetricks_path "vd=$VIRTUAL_DESKTOP"
+fi
 
 rm $winetricks_path
 rm -r ~/.cache/winetricks
@@ -61,7 +64,7 @@ install_quark_window=$(find_window '安装 - 夸克网盘' 10)
 send_enter $install_quark_window
 
 # Wait for installation to finish (and the main window to show up)
-find_window '分享链接' 600
+find_window '分享链接' 300
 
 sleep 10
 
